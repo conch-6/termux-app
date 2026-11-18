@@ -50,6 +50,7 @@ jobs:
           export TERMUX_APP_VERSION_NAME="$CURRENT_VERSION_NAME"
           export TERMUX_APK_VERSION_TAG="$APK_VERSION_TAG"
           export TERMUX_PACKAGE_VARIANT="$PACKAGE_VARIANT"
+          ./gradlew downloadBootstraps --no-daemon
           ./gradlew assembleRelease --no-daemon
 
       - name: Verify signature
