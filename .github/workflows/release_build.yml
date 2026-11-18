@@ -43,6 +43,7 @@ jobs:
         shell: bash {0}
         env:
           PACKAGE_VARIANT: apt-android-7
+          TERMUX_SPLIT_APKS_FOR_RELEASE_BUILDS: "1"
         run: |
           CURRENT_VERSION_NAME="$(grep -m 1 -E '\s+versionName "([^"]+)"$' ./app/build.gradle | sed -r 's/.*versionName "([^"]+)"$/\1/')"
           APK_VERSION_TAG="v${CURRENT_VERSION_NAME}+${GITHUB_SHA:0:7}-${PACKAGE_VARIANT}-release"
