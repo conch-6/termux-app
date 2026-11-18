@@ -37,3 +37,7 @@ local.properties
 .swp
 ehthumbs.db
 Thumbs.db
+
+# Release signing (provided via CI secrets)
+*.jks
+!app/testkey_untrusted.jks
